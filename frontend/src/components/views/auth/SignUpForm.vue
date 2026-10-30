@@ -16,6 +16,13 @@
         autocomplete="new-password"
         :error="errors.password"
       />
+      <BaseInput
+        v-model="form.confirmPassword"
+        label="Confirm password"
+        type="password"
+        autocomplete="new-password"
+        :error="errors.confirmPassword"
+      />
       <p v-if="formError" role="alert" class="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">
         {{ formError }}
       </p>
