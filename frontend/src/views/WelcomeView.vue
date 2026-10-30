@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import WelcomeScreen from '@/components/home/WelcomeScreen.vue';
+import WelcomeScreen from '@/components/views/home/WelcomeScreen.vue';
 </script>
 
 <template>
