@@ -7,17 +7,17 @@ const router = createRouter({
     {
       path: '/sign-in',
       name: 'sign-in',
-      component: () => import('@/pages/SignInPage.vue'),
+      component: () => import('@/views/SignInView.vue'),
     },
     {
       path: '/sign-up',
       name: 'sign-up',
-      component: () => import('@/pages/SignUpPage.vue'),
+      component: () => import('@/views/SignUpView.vue'),
     },
     {
       path: '/app',
       name: 'app',
-      component: () => import('@/pages/WelcomePage.vue'),
+      component: () => import('@/views/WelcomeView.vue'),
     },
     { path: '/:pathMatch(.*)*', redirect: '/' },
   ],
