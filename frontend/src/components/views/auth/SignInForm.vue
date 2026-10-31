@@ -15,7 +15,11 @@
         autocomplete="current-password"
         :error="errors.password"
       />
-      <p v-if="formError" role="alert" class="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">
+      <p
+        v-if="formError"
+        role="alert"
+        class="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700"
+      >
         {{ formError }}
       </p>
       <BaseButton type="submit" :loading="isSubmitting">Sign in</BaseButton>
@@ -23,7 +27,10 @@
 
     <template #footer>
       Don't have an account?
-      <RouterLink :to="{ name: 'sign-up' }" class="font-medium text-indigo-600 hover:underline">
+      <RouterLink
+        :to="{ name: 'sign-up' }"
+        class="font-medium text-indigo-600 hover:underline"
+      >
         Sign up
       </RouterLink>
     </template>
