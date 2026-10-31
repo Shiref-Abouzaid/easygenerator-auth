@@ -1,5 +1,8 @@
 <template>
-  <AuthCard title="Create your account" subtitle="Sign up with your email and a strong password.">
+  <AuthCard
+    title="Create your account"
+    subtitle="Sign up with your email and a strong password."
+  >
     <form class="flex flex-col gap-4" novalidate @submit.prevent="submit">
       <BaseInput
         v-model="form.email"
@@ -8,7 +11,12 @@
         autocomplete="email"
         :error="errors.email"
       />
-      <BaseInput v-model="form.name" label="Name" autocomplete="name" :error="errors.name" />
+      <BaseInput
+        v-model="form.name"
+        label="Name"
+        autocomplete="name"
+        :error="errors.name"
+      />
       <BaseInput
         v-model="form.password"
         label="Password"
@@ -23,7 +31,11 @@
         autocomplete="new-password"
         :error="errors.confirmPassword"
       />
-      <p v-if="formError" role="alert" class="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">
+      <p
+        v-if="formError"
+        role="alert"
+        class="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700"
+      >
         {{ formError }}
       </p>
       <BaseButton type="submit" :loading="isSubmitting">Sign up</BaseButton>
@@ -31,7 +43,10 @@
 
     <template #footer>
       Already have an account?
-      <RouterLink :to="{ name: 'sign-in' }" class="font-medium text-indigo-600 hover:underline">
+      <RouterLink
+        :to="{ name: 'sign-in' }"
+        class="font-medium text-indigo-600 hover:underline"
+      >
         Sign in
       </RouterLink>
     </template>

@@ -21,7 +21,10 @@ const BASE_URL = import.meta.env.VITE_API_URL;
 // The free backend sleeps when idle and can take up to a minute to wake up.
 const TIMEOUT_MS = 60_000;
 
-export async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
+export async function request<T>(
+  path: string,
+  options: RequestInit = {},
+): Promise<T> {
   const token = tokenStorage.get();
   let response: Response;
 
@@ -50,7 +53,10 @@ export async function request<T>(path: string, options: RequestInit = {}): Promi
   const body: unknown = await response.json().catch(() => null);
 
   if (!response.ok) {
-    const { message, errors } = (body ?? {}) as { message?: string; errors?: FieldError[] };
+    const { message, errors } = (body ?? {}) as {
+      message?: string;
+      errors?: FieldError[];
+    };
     throw new ApiError(
       response.status,
       message ?? 'Something went wrong. Please try again.',
