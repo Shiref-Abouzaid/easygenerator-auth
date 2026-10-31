@@ -19,6 +19,7 @@ export function setupApp(app: INestApplication) {
     new ValidationPipe({
       whitelist: true,
       forbidNonWhitelisted: true,
+      transform: true,
       exceptionFactory: (errors) =>
         new BadRequestException({
           message: 'Validation failed.',
