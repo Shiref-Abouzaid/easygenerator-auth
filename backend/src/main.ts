@@ -3,9 +3,11 @@ import { ConfigService } from '@nestjs/config';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import { setupApp } from './app.setup';
+import { requestLogger } from './common/middleware/request-logger.middleware';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.use(requestLogger);
   setupApp(app);
   app.enableShutdownHooks();
 
